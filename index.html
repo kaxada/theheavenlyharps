@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coming Soon - The Heavenly Harps</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@600&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            transition: width 0.7s ease-in-out;
         }
 
         body {
@@ -23,7 +26,7 @@
         }
 
         /* Create a full-screen container */
-        .coming-soon-container {
+        .content-section {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -34,20 +37,20 @@
 
         /* Background Image */
         .background-image {
-            width: 100%;
-            height: 100%;
+            width: 110%;
+            height: 110%;
             object-fit: cover;
             position: absolute;
             top: 0;
             left: 0;
             z-index: -1;
-            filter: blur(3px);
+            filter: blur(5px);
         }
 
         /* Background Overlay */
         .background-overlay {
-            width: 100%;
-            height: 100%;
+            width: 110%;
+            height: 110%;
             background-color: rgba(0, 51, 102, 0.5);
             position: absolute;
             top: 0;
@@ -56,51 +59,27 @@
         }
 
         /* Header */
-        .header {
-            width: 60%; /* Initial width in desktop view */
+        header {
+            width: 60%;
             display: flex;
             justify-content: space-between;
-            padding: 20px;
-            position: fixed; /* Fix the header at the top */
-            top: 0; /* Position at the top */
+            padding-top: 60px;
+            position: fixed;
+            /* Fix the header at the top */
+            top: 0;
+            /* Position at the top */
             z-index: 1;
-            transition: width 0.5s; /* Smooth transition for width changes */
-            background-color: transparent; /* Clear background */
-        }
-
-        @media (max-width: 768px) {
-            /* Adjust header width for mobile view */
-            .header {
-                width: 100%;
-            }
+            transition: width 0.5s;
+            background-color: transparent;
         }
 
         .logo {
-            width: 200px; /* Adjust size as needed */
+            width: 250px;
         }
 
-        .contact-info {
-            font-size: 30px;
-            color: #FFFFFF;
-            display: flex;
-            align-items: center;
-            font-weight: bolder;
-        }
-
-        .contact-info a {
-            color: #FFFFFF;
-            text-decoration: none;
-            transition: color 0.3s ease-in-out;
-        }
-
-        .contact-info a:hover {
-            color: #003366; /* Change color to the brand color on hover */
-            transition: color 0.3s ease-in-out;
-        }
-
-        /* Title */
-        .title {
-            font-size: 170px; /* Increase font size */
+        /* description */
+        .description {
+            font-size: 170px;
             font-family: 'Playfair Display', serif;
             font-weight: bold;
             text-align: left;
@@ -110,23 +89,15 @@
             line-height: 80%;
         }
 
-        /* Description */
-        .description {
-            font-size: 36px; /* Increase font size */
-            text-align: left;
-            margin: 20px 0;
-            color: #FFFFFF; /* White text color */
-            z-index: 1;
-            width: 60%;
-        }
-
         /* Social Icons */
-        .social-icons {
+        footer {
+            width: 60%;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: left;
+            align-items: left;
             position: absolute;
-            bottom: 20px; /* Position at the bottom */
+            bottom: 50px;
+            /* Position at the bottom */
             z-index: 1;
         }
 
@@ -134,34 +105,108 @@
             text-decoration: none;
             margin: 0 20px; /* Increase spacing between icons */
             font-size: 36px; /* Increase icon size */
-            color: #CCCCCC;
+            color: #FFFFF0;
             transition: color 0.3s ease-in-out;
         }
 
         .social-icons a:hover {
-            color: #003366; /* Change color to the brand color on hover */
+            color: #003366;
+        }
+
+        /* Tablet Devices */
+        @media (min-width: 768px) and (max-width: 991.99px) {
+
+            header {
+                width: 100%;
+                padding-left: 40px;
+            }
+
+            .logo {
+                width: 300px;
+            }
+            /* description */
+            .description {
+                font-size: 100px;
+                width: 100%;
+                padding-left: 40px;
+                padding-right: 20px;
+            }
+
+            /* footer */
+            footer {
+                width: 100%;
+                padding-left: 20px;
+                bottom: 70px;
+            }
+        }
+
+        /* Mobile Devices */
+        @media (max-width: 767.99px) {
+            /* Background Image */
+            .background-image {
+                width: 110%;
+                height: 110%;
+                transition: width 0.1s ease-in-out;
+            }
+
+            /* Background Overlay */
+            .background-overlay {
+                width: 110%;
+                height: 110%;
+                transition: width 0.1s ease-in-out;
+            }
+
+            /* Header */
+            header {
+                width: 100%;
+                padding-left: 60px;
+            }
+
+            .logo {
+                width: 190px;
+            }
+
+            /* description */
+            .description {
+                font-size: 80px;
+                text-align: left;
+                width: 100%;
+                padding-left: 30px;
+            }
+
+            /* Social Icons */
+            footer {
+                width: 100%;
+                padding-left: 30px;
+            }
+
+            .social-icons a {
+                margin: 0 10px; /* Increase spacing between icons */
+                font-size: 24px; /* Increase icon size */
+            }
         }
     </style>
 </head>
+
 <body>
-    <div class="coming-soon-container">
+    <section class="main">
         <img src="background.jpg" alt="Background Image" class="background-image" />
         <div class="background-overlay"></div>
-        <header class="header">
-            <img src="logo.png" alt="Heavenly Harps Logo" class="logo" />
-            <div class="contact-info">
-                <a href="tel:+256780726962">+256 780 726 962</a>
-            </div>
-        </header>
-        <!-- <p class="description">Coming Soon</p> -->
-        <h1 class="title">We are working on an awesome website.</h1>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-    </div>
+        <section class="content-section">
+            <header>
+                <img src="logo.png" alt="Heavenly Harps Logo" class="logo" />
+            </header>
+            <h1 class="description">We are working on an awesome website.</h1>
+            <footer>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/theheavenlyharps/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com/theavenlyharps"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/theheavenlyharps"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@TheHeavenlyHarps"><i class="fab fa-youtube"></i></a>
+                </div>
+            </footer>
+        </section>
+    </section>
 </body>
-</html>
 
+</html>
